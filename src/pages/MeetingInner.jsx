@@ -7,7 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Unstable_Grid2";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,8 +15,11 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import { createTheme, ThemeProvider, GlobalStyles } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
+import ActionItem from "../components/meeting/ActionItem";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const cards = [1, 2, 3];
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -60,41 +63,49 @@ export default function MeetingInner() {
             }}
             maxWidth="md"
           >
-            {/* End hero unit */}
-            <Grid container spacing={4}>
-              {cards.map((card) => (
-                <Grid item key={card} xs={12} sm={6} md={4}>
-                  <Card
-                    sx={{
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                    }}
-                  >
-                    <CardMedia
-                      component="div"
-                      sx={{
-                        // 16:9
-                        pt: "56.25%",
-                      }}
-                      image="https://source.unsplash.com/random?wallpapers"
-                    />
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        Heading
-                      </Typography>
-                      <Typography>
-                        This is a media card. You can use this section to
-                        describe the content.
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Button size="small">View</Button>
-                      <Button size="small">Edit</Button>
-                    </CardActions>
-                  </Card>
-                </Grid>
-              ))}
+            <Grid container spacing={2}>
+              <Grid xs={4}>
+                <Typography align="center">Action Items Log</Typography>
+              </Grid>
+              <Grid xs={4}>
+                <Typography align="center">Pending</Typography>
+              </Grid>
+              <Grid xs={4}>
+                <Typography align="center">Done</Typography>
+              </Grid>
+            </Grid>
+
+            {/* Here we have 3 stack columns to display items based on it's status */}
+            <Grid container spacing={2}>
+              <Grid xs={4}>
+                <Stack spacing={2}>
+                  {cards.map((card) => (
+                    <Grid item key={card}>
+                      <ActionItem></ActionItem>
+                    </Grid>
+                  ))}
+                </Stack>
+              </Grid>
+
+              <Grid xs={4}>
+                <Stack spacing={2}>
+                  {cards.map((card) => (
+                    <Grid item key={card}>
+                        <ActionItem></ActionItem>
+                    </Grid>
+                  ))}
+                </Stack>
+              </Grid>
+
+              <Grid xs={4}>
+                <Stack spacing={2}>
+                  {cards.map((card) => (
+                    <Grid item key={card}>
+                        <ActionItem></ActionItem>
+                    </Grid>
+                  ))}
+                </Stack>
+              </Grid>
             </Grid>
           </Container>
         </Box>
