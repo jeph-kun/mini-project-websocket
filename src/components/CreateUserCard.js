@@ -38,7 +38,7 @@ const NameField = styled(TextField)({
   });
 
 const ButtonStyle = {
-  borderRadius: "10px", height: "50px;", marginTop: "20px", fontFamily: "Comic Neue", fontWeight: "700", backgroundColor: "#3A84EF"
+  borderRadius: "10px", height: "50px;", marginTop: "20px", fontFamily: "Comic Neue", fontWeight: "700", backgroundColor: "#53C01E"
 }
   
 
@@ -60,11 +60,11 @@ const CreateUserCard = ({triggerUserRegistered, socket}) => {
   return (
     <>
 
-    <Box sx={{ width: 400, position: "relative" }}>
-        <img src={birds} className="love-birds"/>
-        <Card variant="outlined" sx={{ borderRadius: "10px", borderWidth: "2px", borderColor: "#1fb7f8"}}>
+    <Box className="fade-in-element" sx={{ width: 400, position: "relative" }}>
+        {/* <img src={birds} className="love-birds"/> */}
+        <Card variant="outlined" sx={{ borderRadius: "10px", boxShadow: 4}}>
             <CardContent>
-                <Typography sx={{ fontWeight: "700", color: "#1fa1f8", fontFamily: "Itim" }}  variant='h5' align='center' gutterBottom>
+                <Typography sx={{ fontWeight: "700", color: "#000", fontFamily: "Inter" }}  variant='h5' align='center' gutterBottom>
                     Choose your avatar
                 </Typography>
                 

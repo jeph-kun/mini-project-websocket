@@ -6,17 +6,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./images/background/sky.png');
+  /* background-image: url('./images/background/sky.png'); */
+  background-color: #D7E4FE;
   background-size: cover;
   position: relative;
 }
 
 .cloud{
-  background-image: url('./images/background/clouds_1.png');
+  /* background-image: url('./images/background/clouds_1.png'); */
   background-size: cover;
   width: 100%;
   height: 100vh;
   position: absolute;
+  background-color: #D7E4FE;
 }
 
 .avatar-list {
@@ -40,7 +42,7 @@
 }
 
 .selected-avatar {
-  border: 4px solid #ffdf53;
+  border: 4px solid #53C01E;
   border-radius: 100%;
 }
 
@@ -227,4 +229,85 @@
   margin-top: -10px;
 }
 
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
 
+.fade-in-element {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.dflex{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.flex-center{
+  justify-content: center;
+}
+
+.px-10{
+  padding-right: 10px;
+}
+
+.py-10{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+.flex-end{
+  justify-content: end;
+}
+
+.svg-12{
+  width: 12px;
+  height: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.svg-20{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/*MODAL*/
+.modal-body > label{
+  font-weight: bold;
+  color: #9FA5B7;
+  font-family: Inter;
+}
+
+.copy-link-btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: text-shadow 0.3s ease;
+}
+
+.copy-link-btn:hover {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a glow effect to the text on hover */
+}
+
+.MuiTextField-root >  .MuiInputBase-root > .MuiInputBase-input{
+  background-color: #D7E4FE;
+  border-radius: 5px;
+}
